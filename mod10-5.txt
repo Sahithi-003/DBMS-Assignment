@@ -1,0 +1,6 @@
+Account(Accid, decAccNo,AccName, Balance)
+FOREIGN KEY(decAccNo) References Account
+
+Conversion Rules:
+* Use the entity type rule to convert the entity type
+* Use 1-M relationship rule for the decomposed relationship

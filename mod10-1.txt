@@ -1,0 +1,12 @@
+Student(StdNo, StdName, StdAddress, StdCity, StdState, StdZip, StdEmai)
+
+Institution(InstID, InstName, InstMascot)
+
+Lender(LenderNo, LendName)
+
+Loan(LoanNo, StdNo, InstID, LenderNo, ProcDate, DisbMethod, DisbBank, DateAuth, NoteValue, Subsidized, Rate)
+
+
+DisburseLine(LoanNo,DateSent, Amount, OrigFee, GuarFee)
+
+

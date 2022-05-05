@@ -1,0 +1,7 @@
+Owner(OwnId,OwnName,OwnPhone)
+Property(PropId,BldgName,UnitNo,Bdrms)
+
+M-N relation(Shares)
+Shares(OwnId,PropId,StartWeek,EWndWeek)
+FOREIGN KEY(OwnId) references Owner
+FOREIGN KEY(PropId) references Property
