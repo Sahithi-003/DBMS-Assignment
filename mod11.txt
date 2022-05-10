@@ -1,0 +1,53 @@
+MOdule 11 
+Problem-1
+
+INSERTION anomaly
+
+Inorder add a patient we need VisitNo and ProvNo ,Since the combination of them forms a primary key
+
+UPDATE anamoly
+
+If we change ProvSpecialty, ProvNo D2 two rows must be changed.
+
+Deletion anamoly
+
+If we ProvNo D2 in V10021 , P1 will also be deleted.
+
+Problem-2
+
+List of FDs:
+
+PatNo ->  PatAge, PatZip9
+PatZip -> PatCity
+VisitNo ->VisitDate,PatNo
+ProvNo -> ProvSpeciality, ProvEmail
+VisitNo, ProvNo -> Diagnosis
+
+BCNF Tables:
+PatientTable1 (PatNo,PatAge,PatZip)
+	Fk(PatZip) References PatientTable1-1
+PatientTable1-1 (PatZip,Patcity)
+
+PatientTable2(VisitNo, PatNo, VisitDate)
+	Fk(PatNo) References PatientTable1
+PatientTable3(ProvNo, ProvEmail,ProvSpecialty)
+	Pk(ProvEmail)
+PatientTable4(ProvNo,VisitNo,Diagnosis)
+	FK(ProvNo) References PatientTable3
+	FK(VisitNo) References PatientTable2
+
+Problem-3
+
+Student Table : StdNo will voilate BCNF 
+Lender Table : Is in BCNF
+Institution Table : InstName will voilate BCNF
+
+Problem-4
+
+OrdNo -> ItemNo (I1,I2)(I3,I4)
+OrdNo -> QtyOrd((3,4)
+OrdNo -> CustNo (-)
+OrdNo -> CustBal (-)
+OrdNo -> CustDisc (-)
+OrdNo -> ItemPrice (I1,I2)(I3,I4)
+OrdNo -> Orddate (-)
